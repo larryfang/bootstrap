@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="utf-8">
+    <title>Google Phone Gallery</title>
+    <link rel="stylesheet" href="css/app.css">
+    <script src="js/todo.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/todo.css">
+    <script src="lib/angular/angular.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/underscore-min.js"></script>
+</head>
+
+<body>
+  <div ng-controller="TodoCtrl">
+      <h2>Total is: {{total() + 2}}</h2>
+      <ul class='unstyled'>
+          <li ng-repeat="todo in todos">
+              <input type="checkbox" ng-model="todo.status">
+        <span class="done-{{todo.status }}">{{todo.text + 'hello'}} </span>
+              <button class="icon-remove" ng-click="remove()"></button>
+          </li>
+
+      </ul>
+      <form class="form-horizontal">
+          <input type="text" ng-model="formdata">
+           <button class="btn" ng-click="add()"><i class="icon-plus"> </i>Add</button>
+      </form>
+  </div>
+</body>
+</html>
